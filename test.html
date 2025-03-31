@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .TABLE {margin: auto; width: 1024px; font-size: 20px;}
+        td {text-align: center;}
+        .br {height: 75px;}
+        .b_img {width: 100%;}
+        .s_img {border-radius: 50%; width: 50px; height: 50px;}
+        .r_img {border-radius: 50%; width: 500px; height: 500px;}
+        .r_img:hover {rotate: 15deg; opacity: 50%;}
+        .largest_font {font-size: 50px;}
+        .larger_font {font-size: 30px;}
+        .larger_font:hover {color: white; background-color: #333; opacity: 50%;}
+        .largest_font:hover {color: white; background-color: #333; opacity: 80%;}
+        .navbar {overflow: hidden; background-color: #333; position: fixed; top: 0; width: 100%;}
+        .navbar a {float: left; display: block; color: #f2f2f2; text-align: left; padding: 14px 16px; text-decoration: none;}
+        .navbar a:hover {background: #ddd; color: black;}
+        .main {margin-top: 30px;}
+    </style>
+    
+    <!-- Highcharts Scripts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">首頁</a>
+        <a href="#content1">台中國家歌劇院</a>
+        <a href="#content2">臺中州廳</a>
+        <a href="#content3">審計新村</a>
+    </div>
+    
+    <br>
+    
+    <div id="home" class="TABLE">
+        <table border="0">
+            <!-- 原有內容省略 -->
+            
+            <tr>
+                <td colspan="2">
+                    <!-- 嵌入 Highcharts 圖表 -->
+                    <figure class="highcharts-figure">
+                        <div id="container"></div>
+                        <p class="highcharts-description">
+                            Basic line chart showing trends in a dataset. This chart includes the
+                            <code>series-label</code> module, which adds a label to each line for
+                            enhanced readability.
+                        </p>
+                    </figure>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <p>
+                        聯絡資訊：09082XXXXX
+                        網頁設計:吳邱翰
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        // Highcharts 初始化代碼
+        document.addEventListener('DOMContentLoaded', function () {
+            Highcharts.chart('container', {
+                title: { text: 'U.S Solar Employment Growth' },
+                subtitle: { text: 'Source: thesolarfoundation.com' },
+                yAxis: { title: { text: 'Number of Employees' } },
+                xAxis: { accessibility: { rangeDescription: 'Range: 2010 to 2020' } },
+                legend: { layout: 'vertical', align: 'right', verticalAlign: 'middle' },
+                series: [{ name: 'Installation & Project Development', data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175, 176076, 202212] }],
+                responsive: { rules: [{ condition: { maxWidth: 500 }, chartOptions: { legend: { layout: 'horizontal', align: 'center', verticalAlign: 'bottom' } } }] }
+            });
+        });
+    </script>
+</body>
+</html>
